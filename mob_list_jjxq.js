@@ -134,13 +134,23 @@ var mob_list_jjxq = {
           "OpenName": "分红信息",
           "OpenUrl": "fhxx.html",
           "queryParams": [
-            { key: "pro_code", value: "pro_code" },
-            { key: "pro_type1", value: "pro_type1" },
-            { key: "pro_type2", value: "pro_type2" }
+            { key: "pro_code", value: "pro_code" }
           ]
         } },
-        { title: "基金公司", field: "pro_manager" },
-        { title: "基金经理", field: "fund_manager" }
+        { title: "基金公司", field: "pro_manager", urlParam: {
+          "OpenName": "基金公司",
+          "OpenUrl": "gsxx.html",
+          "queryParams": [
+            { key: "pro_code", value: "pro_code" }
+          ]
+        }  },
+        { title: "基金经理", field: "fund_manager", urlParam: {
+          "OpenName": "基金经理",
+          "OpenUrl": "jlxx.html",
+          "queryParams": [
+            { key: "pro_code", value: "pro_code" }
+          ]
+        }  }
       ],
       lineStyle: {
         borderBottom: "1px solid #ddd"
