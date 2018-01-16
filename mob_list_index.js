@@ -122,7 +122,7 @@ var mob_list_index = {
           OpenName: "产品详情",
           OpenUrl: "jjxq.html",
           queryParams: [
-            { key: "code", value: "pro_code" },
+            { key: "pro_code", value: "pro_code" },
             { key: "pro_type1", value: "pro_type1"},
             { key: "pro_type2", value: "pro_type2"},
           ]
@@ -174,7 +174,7 @@ var mob_list_index = {
           OpenName: "产品详情",
           OpenUrl: "jjxq.html",
           queryParams: [
-            { key: "code", value: "pro_code" },
+            { key: "pro_code", value: "pro_code" },
             { key: "pro_type1", value: "pro_type1" },
             { key: "pro_type2", value: "pro_type2" }
           ]

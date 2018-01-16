@@ -11,27 +11,26 @@ var GetSendData = function(n, json) {
 
   var funcid;
   var ix = new IXContent();
+  code = json["pro_code"];
 
   switch(n) {
-
     case 0:
-      code = json["pro_code"];
       funcid = "HQ.TAS.product_info_query";
-      ix.Set("pro_code", json["pro_code"]);
+      ix.Set("pro_code", code);
       ix.Set("pro_type1", json["pro_type1"]);
       ix.Set("pro_type2", json["pro_type2"]);
       break;
     case 2:
       funcid = "HQ.CWServ.tdxzx_jyfunc";
       ix.Set("callno", "105");
-      ix.Set("pro_code", json["pro_code"]);
+      ix.Set("pro_code", code);
       ix.Set("pro_mm", "1");
       ix.Set("pro_type", "zms");
       break;
     case 3:
       funcid = "HQ.CWServ.tdxzx_jyfunc";
       ix.Set("callno", "103");
-      ix.Set("pro_code", json["pro_code"]);
+      ix.Set("pro_code", code);
       ix.Set("pro_type", json["pro_type2"]);
       ix.Set("pro_mm", json["pro_mm"]);
       break;
@@ -42,7 +41,7 @@ var GetSendData = function(n, json) {
       }
       funcid = "HQ.CWServ.tdxzx_jyfunc";
       ix.Set("callno", "104");
-      ix.Set("pro_code", json["pro_code"]);
+      ix.Set("pro_code", code);
       ix.Set("pro_mm", "-12");
       break;
   }
@@ -112,10 +111,21 @@ var getMoreInfo = function(row, vm) {
 
   __hqCallTql.send("CWServ.tdxzx_jyfunc", [{
     "callno": "100",
-    "pro_code": row["pro_code"],
+    "pro_code": code,
     "pro_type": ""
   }], function(data) {
 
+    if (typeof data == 'string') {
+      data = data.replace(/\r\n/ig, "<br>");
+      // data = data.replace(/\s/g, "");
+      // 转换类型防止空格被格式化
+      data = JSON.parse(data);
+    }
+    let ai = data[1].indexOf("fund_manager")
+    if (ai!=-1&&data[3][ai]!=undefined) {
+      data[3][ai] = data[3][ai].replace(/\s/g,'、')
+    }
+    
     data = FormatResult(data);
     if(data.ErrorCode != 0) {
       tdxAlert(data.ErrorInfo);
