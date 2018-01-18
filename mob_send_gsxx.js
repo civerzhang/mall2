@@ -20,11 +20,6 @@ var SetDataField = function(data, n, vm) {
   if(n == 0) {
     data = data.rows[0];
   }
-
-  if (data["A13"].length>2) {
-    vm.dataCache[1] = {"A13":data["A13"]};
-  }else{
-    vm.dataCache[1] = {"A13":"暂无简介信息。"};
-  }
+  vm.dataCache[1] = data;
   return data;
 }

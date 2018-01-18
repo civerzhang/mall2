@@ -4,7 +4,7 @@ var mob_list_gsxx = {
       tplid: "mob-card-jjgs",
       index: 1,
       split: {},
-      title: "公司简介1",
+      title: "公司简介",
       field: "A13"
     },
     {
@@ -15,7 +15,8 @@ var mob_list_gsxx = {
         icon: {
           style: {}
         },
-        title: "基本信息"
+        title: "基本信息",
+        style: {color: "red"}
       },
       // A01	总经理
       // A02	注册地城市
@@ -57,8 +58,15 @@ var mob_list_gsxx = {
         },
       ],
       lineStyle: {
-        borderBottom: "1px solid #ddd",
+        // borderBottom: "1px solid #ddd",
       },
+      titleStyle: {
+        color: "#404040",
+        fontSize: "14px",
+      },
+      barStyle: {
+        color: "red"
+      }
     }
   ],
 }

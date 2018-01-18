@@ -6,7 +6,7 @@ var GetSendData = function(n, json) {
 
     case 0:
       funcid = "HQ.TSTC.10038";
-      ix.Set("tdxOrigin", "1");
+      ix.Set("F19471", "1");
       break;
     default:
       break;
