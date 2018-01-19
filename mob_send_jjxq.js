@@ -115,16 +115,16 @@ var getMoreInfo = function(row, vm) {
     "pro_type": ""
   }], function(data) {
 
-    // if (typeof data == 'string') {
-    //   data = data.replace(/\r\n/ig, "<br>");
-    //   // data = data.replace(/\s/g, "");
-    //   // 转换类型防止空格被格式化
-    //   data = JSON.parse(data);
-    // }
-    // let ai = data[1].indexOf("fund_manager")
-    // if (ai!=-1&&data[3][ai]!=undefined) {
-    //   data[3][ai] = data[3][ai].replace(/\s/g,'、')
-    // }
+    if (typeof data == 'string') {
+      data = data.replace(/\r\n/ig, "<br>");
+      // data = data.replace(/\s/g, "");
+      // 转换类型防止空格被格式化
+      data = JSON.parse(data);
+    }
+    let ai = data[1].indexOf("fund_manager")
+    if (ai!=-1&&data[3][ai]!=undefined) {
+      data[3][ai] = data[3][ai].replace(/\s/g,'、')
+    }
     data = FormatResult(data);
     if(data.ErrorCode != 0) {
       tdxAlert(data.ErrorInfo);

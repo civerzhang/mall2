@@ -1,7 +1,7 @@
 var mob_list_gsxx = {
   items: [
     {
-      tplid: "mob-card-jjgs",
+      tplid: "mob-card-gsinfo",
       index: 1,
       split: {},
       title: "公司简介",
