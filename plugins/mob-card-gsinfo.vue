@@ -3,7 +3,9 @@
     <div>
         
         <div :style="boxStyle" v-if="data" >
-            <div :style="titleStyle">{{item.title}}</div>
+            <div v-if="item.title.text" :style="titleStyle">{{item.title.text}}</div>
+            <div v-else :style="titleStyle">{{data[item.title.field]}}</div>
+            <div v-if="item.subTitle" :style="subTitleStyle">{{data[item.subTitle]}}</div>
             <div ref ="mainTxt" v-on:click="toggleMore" :style="introStyle">{{data.cutted}}</div>
             <img v-if="isTooLong" v-on:click="toggleMore" :style="imgStyle" src="./res/triangle.png"></img>
         </div>
@@ -73,20 +75,28 @@ return {
         padding: "10px 20px"
       };
     },
-
     titleStyle: function() {
       return {
         fontSize: "16px",
         fontWeight: "bold",
-        lineHeight: "40px"
+        color: "#404040",
+        lineHeight: "22px"
+      };
+    },
+    subTitleStyle: function() {
+      return {
+        fontSize: "14px",
+        color: "#9D9D9D",
+        lineHeight: "20px"
       };
     },
     introStyle: function() {
       return {
+        marginTop: "10px",
         fontSize: "14px",
         lineHeight: "24px",
         textAlign: "justify",
-        overflow: "hidden"
+        overflow: "hidden",
       };
     },
     cuttedStyle: function() {

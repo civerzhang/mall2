@@ -4,7 +4,11 @@ var mob_list_gsxx = {
       tplid: "mob-card-gsinfo",
       index: 1,
       split: {},
-      title: "公司简介",
+      title: {
+        // text: "公司简介",
+        field: "A01",
+      },
+      subTitle: "A02",
       field: "A13"
     },
     {
