@@ -9,7 +9,6 @@ var GetSendData = function(n, json) {
       funcid = "HQ.CWServ.tdxzx_jyfunc",
       ix.Set("callno", "106");
       ix.Set("pro_code", json["pro_code"]);
-      localStorage["pro_code"] = json["pro_code"];
       break;
   }
 
@@ -20,14 +19,20 @@ var SetDataField = function(data, n, vm) {
 
   if(n == 0) {
     data = data.rows;
+    data = data.find(function (obj) {
+      return obj["A01"] == decodeURI(getParams()["man_name"]);
+    })
   }
-  debugger;
-  data = data.map(function (obj) {
-    obj["pro_code"] = localStorage["pro_code"]
-    obj["A04"] = obj["A04"]+"至今";
-
-    return obj;
-  })
-
+  vm.dataCache[1] = data;
   return data;
+}
+
+var getParams = function () {
+  var _search = location.search.substr(1).split('&');
+  var result = {}
+  for(var i in _search) {
+    var param = _search[i].split('=');
+    result[param[0]] = param[1];
+  }
+  return result;
 }

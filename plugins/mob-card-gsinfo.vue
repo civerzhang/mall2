@@ -37,14 +37,15 @@ return {
 
   methods: {
     toggleMore: function(event) {
+      //debugger;
       if (this.data.cutted=="暂无简介信息") {
         return;
       }
-      if (this.data.cutted.length == 90) {
+      if (this.data.cutted.length == 93) {
         this.$set(this.data, "cutted", this.data[this.item.field]);
         $("img").css("transform", "rotateX(180deg)");
       }else{
-        this.$set(this.data, "cutted", this.data[this.item.field].slice(0, 90));
+        this.$set(this.data, "cutted", this.data[this.item.field].slice(0, 90)+"...");
         $("img").css("transform", "rotateX(0deg)");
       }
     },
@@ -61,7 +62,7 @@ return {
       }
       if (this.data[this.item.field].length > 90) {
         this.data = Object.assign({}, this.data, {
-          cutted: this.data[this.item.field].slice(0, 90)
+          cutted: this.data[this.item.field].slice(0, 90)+"..."
         });
         return true;
       } else {

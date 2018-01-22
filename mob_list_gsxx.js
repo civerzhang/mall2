@@ -5,10 +5,10 @@ var mob_list_gsxx = {
       index: 1,
       split: {},
       title: {
-        // text: "公司简介",
-        field: "A01",
+        text: "公司简介",
+        // field: "A01",
       },
-      subTitle: "A02",
+      // subTitle: "A02",
       field: "A13"
     },
     {
