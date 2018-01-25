@@ -1,13 +1,13 @@
-var mob_list_lsddcx = {
+var mob_list_drddcx = {
   querys: [
     {
       tplid: "mob-bar-tab",
       tabs: [
-        { title: "基金", param: { "funcid": "2620" } },
+        { title: "基金", param: { "funcid": "2616" } },
         { title: "银行理财", param: { "funcid": "2260" } },
       ],
       split: {},
-      localStorageKey: "lsddcx",
+      localStorageKey: "drddcxtab",
       style: {
         justifyContent: "space-around"
       },
@@ -20,7 +20,7 @@ var mob_list_lsddcx = {
       }
     },
     {
-      tplid: "mob-query-date",
+      // tplid: "mob-query-date",
       query: [0]
     }
   ],

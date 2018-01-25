@@ -7,7 +7,7 @@ var mob_list_cd2 = {
         { title: "银行理财", param: { "funcid": "2260" } }
       ],
       split: {},
-      localStorageKey: "cctab0",
+      localStorageKey: "cdtab0",
       style: {
         justifyContent: "space-around"
       },
@@ -76,7 +76,7 @@ var mob_list_cd2 = {
               } else {
                 acc = JSON.parse(user);
               }
-              cdHandler(data,acc)
+              cdConfirm(data,acc)
             })
           }
         },
@@ -118,8 +118,18 @@ var mob_list_cd2 = {
   ]
 }
 
+var cdConfirm = function(data,acc) {
+  let tips = "订单信息\n\n产品名称："+data["392"]+"\n委托数量："+data["414"]+"\n委托金额："+data["405"]+"\n\n确认撤单？"
+  tdxConfirm({"content":tips,"ok":function () {
+    cdHandler(data,acc)
+    // alert("ok")
+  }})
+}
+
+
 var cdHandler = function(data,acc){
-  let type = localStorage["cctab0"];
+  debugger;
+  let type = localStorage["cdtab0"]||"0";
 	let newstream = [{}];
 	newstream[0] = {
 		"120": acc["KHH"], //客户号

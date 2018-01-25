@@ -21,19 +21,6 @@
 
 <script>
 return {
-  mounted(){
-    // alert("run")
-  },
-  updated(){
-    // debugger;
-    let text = this.$refs.mainTxt;
-    if (text.offsetHeight>96) {
-      // $("img").parent().children()[1].css("overflow", "hidden");
-
-    }
-    // alert("run")
-    // console.log(text);
-  },
 
   methods: {
     toggleMore: function(event) {
