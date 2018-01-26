@@ -6,5 +6,9 @@
     {
         "tplid": "mob-card-jjjl",
         "file": "mob-card-jjjl.vue"
+    },
+    {
+        "tplid": "mob-card-lsinfo",
+        "file": "mob-card-lsinfo.vue"
     }
 ]

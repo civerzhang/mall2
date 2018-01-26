@@ -1,48 +1,5 @@
 
-var getOpBtn = function(data) {
-  var status = data["pro_status"];
-  var urlParam = [
-    {
-      OpenName: "申购",
-      OpenUrl: "jyhtml/works123/lcsc/otcsg.html?fromsc=1&PageID=Mobile.OTC.OTCSGTRD",
-      OpenParam: {
-        UrlType: "Absolute",
-        WebViewType: "JyURL"
-      },
-      queryParams: [
-        { key: "F402", value: "pro_code" }
-      ],
-      requireLogin: 1
-    },
-    {
-      OpenName: "认购",
-      OpenUrl: "jyhtml/works123/lcsc/otcrg.html?fromsc=1&PageID=Mobile.OTC.OTCSGTRD",
-      OpenParam: {
-        UrlType: "Absolute",
-        WebViewType: "JyURL"
-      },
-      ueryParams: [
-        { key: "F402", value: "pro_code" }
-      ],
-      requireLogin: 1
-    }
-  ];
-
-  if(status == "1") {
-    return {
-      name: "申购",
-      urlParam: urlParam[0]
-    };
-  }
-  else if(status == "2") {
-    return {
-      name: "认购",
-      urlParam: urlParam[1]
-    };
-  }
-}
-
-var mob_list_jjxq = {
+var mob_list_lsinfo = {
   items: [
     {
       tplid: "mob-card-jj",
@@ -116,8 +73,7 @@ var mob_list_jjxq = {
     },
     {
       tplid: "mob-card-lsinfo",
-      index: 6,
-      split: {}
+      index: 5,
     },
     {
       tplid: "mob-list-jjxq",

@@ -44,13 +44,13 @@ var GetSendData = function(n, json) {
       ix.Set("pro_code", code);
       ix.Set("pro_mm", "-12");
       break;
-    case 6:  //index5用到按钮了
+    case 5:
       funcid = "HQ.CWServ.tdxzx_jyfunc";
       ix.Set("callno", "103");
       ix.Set("pro_code", code);
       ix.Set("pro_type", json["pro_type2"]);
-      ix.Set("pro_mm", "-1");
-      ix.Set("pro_mm1", "-1");
+      ix.Set("pro_mm", "-2");
+      // ix.Set("pro_mm1", "-1");
       break;
   }
 
@@ -80,9 +80,8 @@ var SetDataField = function(data, n, vm) {
   if(n == 4) {
     data = data.rows;
   }
-  if(n == 6) {
-    data = data.rows.slice(-4).reverse();
-
+  if(n == 5) {
+    data = data.rows;
   }
 
   return data;
