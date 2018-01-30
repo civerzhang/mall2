@@ -2,6 +2,7 @@
   一些全局变量
 */
 var code,
+    myType,
     xys = {
       "tzzfxtsh": "https://www.cczq.com/webapp/funds/tzzfxtsh.html",
       "txrqyxz": "https://www.cczq.com/webapp/funds/txrqyxz.html"
@@ -12,6 +13,7 @@ var GetSendData = function(n, json) {
   var funcid;
   var ix = new IXContent();
   code = json["pro_code"];
+  myType = json["pro_type2"];
 
   switch(n) {
     case 0:
@@ -50,7 +52,6 @@ var GetSendData = function(n, json) {
       ix.Set("pro_code", code);
       ix.Set("pro_type", json["pro_type2"]);
       ix.Set("pro_mm", "-1");
-      ix.Set("pro_mm1", "-1");
       break;
   }
 
@@ -60,10 +61,12 @@ var GetSendData = function(n, json) {
 var SetDataField = function(data, n, vm) {
 
   if(n == 0) {
-
     var rowdata = data.rows && data.rows[0];
     rowdata["risk_level_name"] = rowdata["risk_level_name"].replace(/等级/, "");
     getMoreInfo(rowdata, vm);
+    if (rowdata["pro_name"]!=undefined) {
+      __tdxSetTopbarTitle({"Title":rowdata["pro_name"]})
+    }
     data = undefined;
   }
 
@@ -82,7 +85,6 @@ var SetDataField = function(data, n, vm) {
   }
   if(n == 6) {
     data = data.rows.slice(-4).reverse();
-
   }
 
   return data;

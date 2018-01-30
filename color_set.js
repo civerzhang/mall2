@@ -138,6 +138,7 @@ var tdx_color = {
       "nzf": ["red", "green", 3],
       "jnzf": ["red", "green", 3],
       "qrnhsy": ["red", "green", 3],
+      "navzzl": ["red", "green", 3],
     }
   },
 

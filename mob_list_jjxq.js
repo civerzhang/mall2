@@ -117,7 +117,38 @@ var mob_list_jjxq = {
     {
       tplid: "mob-card-lsinfo",
       index: 6,
-      split: {}
+      split: {},
+      title: "历史收益",
+      cols:{
+        "hbjj":[
+          {
+            head: "日期",
+            field: "date"
+          },
+          {
+            head: "七日年化",
+            field: "qrnhsy"
+          },
+          {
+            head: "万份收益",
+            field: "wfsy"
+          }
+        ],
+        "else":[
+          {
+            head: "日期",
+            field: "date"
+          },
+          {
+            head: "日涨跌幅",
+            field: "navzzl"
+          },
+          {
+            head: "单位净值",
+            field: "nav"
+          }
+        ]
+      }
     },
     {
       tplid: "mob-list-jjxq",
