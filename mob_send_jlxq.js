@@ -24,6 +24,7 @@ var SetDataField = function(data, n, vm) {
     })
   }
   vm.dataCache[1] = data;
+  debugger;
   return data;
 }
 

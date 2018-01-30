@@ -22,53 +22,53 @@ var mob_list_jlxq = {
       subTitle: "A04",
       field: "A11"
     },
-    // {
-    //   tplid: "mob-list-jjxq",
-    //   index: 0,
-    //   // split: {},
-    //   bar: {
-    //     icon: {
-    //       style: {}
-    //     },
-    //     title: "基本信息",
-    //     style: {color: "red"}
-    //   },
-    //   lines: [
-    //     {
-    //       title: "成立时间",
-    //       field: "A03"
-    //     },
-    //     {
-    //       title: "法定代表",
-    //       field: "A11"
-    //     },
-    //     {
-    //       title: "总经理",
-    //       field: "A01",
-    //     },
-    //     {
-    //       title: "注册资金(万元)",
-    //       field: "A04"
-    //     },
-    //     {
-    //       title: "电话",
-    //       field: "A06"
-    //     },
-    //     {
-    //       title: "地址",
-    //       field: "A05"
-    //     },
-    //   ],
-    //   lineStyle: {
-    //     // borderBottom: "1px solid #ddd",
-    //   },
-    //   titleStyle: {
-    //     color: "#404040",
-    //     fontSize: "14px",
-    //   },
-    //   barStyle: {
-    //     color: "red"
-    //   }
-    // }
+    {
+      tplid: "mob-list-jjxq",
+      index: 0,
+      // split: {},
+      bar: {
+        icon: {
+          style: {}
+        },
+        title: "基本信息",
+        style: {color: "red"}
+      },
+      lines: [
+        {
+          title: "姓名",
+          field: "A01"
+        },
+        {
+          title: "性别",
+          field: "A02"
+        },
+        {
+          title: "任职天数",
+          field: "A05",
+        },
+        {
+          title: "学历",
+          field: "A06"
+        },
+        {
+          title: "基金公司",
+          field: "A07"
+        },
+        {
+          title: "专业资格",
+          field: "A09"
+        },
+      ],
+      lineStyle: {
+        borderBottom: "1px solid #ddd",
+      },
+      titleStyle: {
+        color: "#404040",
+        fontSize: "14px",
+      },
+      barStyle: {
+        color: "red"
+      }
+    }
   ],
 }
