@@ -16,7 +16,8 @@
           <div :style="tipsStyle">
             <ul>
               <li :style="tipStyle" v-for="(tip,itip) in obj.tips" v-bind:key="itip">
-                <div><div :style="dianStyle"></div></div>
+                <!-- <div><div :style="dianStyle"></div></div> -->
+                <div><img :style="imgStyle" src="./res/Rectangle19.png"></div>
                 <div>{{tip}}</div>
               </li>
             </ul>
@@ -39,7 +40,7 @@ return{
       pleft: 15,      //组件内部左边距
       pright: 15,     //组件内部右边距
       //绘图部分样式
-      fontSize: 12,   //绘图文字行高
+      fontSize: 12,   //绘图文字大小
       circle: 8,      //圆直径
       line: 2         //横线高度
     }
@@ -76,12 +77,13 @@ return{
         fontSize: "16px",
         // fontWeight: "bold",
         color: "#404040",
-        height: "25px",
+        height: "22px",
       }
     },
     headStyle: function() {
       return {
         lineHeight: "20px",
+        color: "#404040",
         fontSize: "14px",
         margin: "0 0 10px 0"
       }
@@ -94,11 +96,13 @@ return{
     subNode0Style: function() {
       return {
         height: this.fontSize*2+"px",
+        color: "#404040",
       }
     },
     subNode1Style: function() {
       return {
         paddingTop: this.fontSize+"px",
+        color: "#9D9D9D",
       }
     },
     hrStyle: function() {
@@ -138,20 +142,24 @@ return{
       return {
         display: "flex",
         marginBottom: "10px",
-        lineHeight: "30px",
+        lineHeight: "17px",
         color: "#9D9D9D",
-        fontSize: "14px",
+        fontSize: "12px",
       }
     },
     dianStyle: function() {
       return {
         width: "4px",
         height: "4px",
-        // display: "inline-block",
         margin: "3px 3px 0 0",
-        // lineHeight: "20px",
         backgroundColor: "#9D9D9D",
-        // fontSize: "14px",
+      }
+    },
+    imgStyle: function() {
+      return {
+        width: "19px",
+        height: "19px",
+        display: "block",
       }
     },
   }
