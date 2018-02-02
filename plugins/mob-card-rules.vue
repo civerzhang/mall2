@@ -6,13 +6,13 @@
           <div v-if="index>0" :style="innerSplitStyle"></div>
           <div :style="headStyle">{{obj.head}}</div>
           <div :style="nodeBoxStyle">
-            <div :style="getNodeStyle(obj)" v-for="(node,inode) in obj.lines" v-bind:key="inode">
+            <div :style="getNodeStyle(obj,inode)" v-for="(node,inode) in obj.lines" v-bind:key="inode">
               <div :style="subNode0Style">{{node[1]}}</div>
               <div><div :style="circleStyle"></div></div>
               <div :style="subNode1Style">{{node[0]}}</div>
             </div>
           </div>
-            <div :style="hrStyle"></div>
+          <div :style="getHrStyle(obj)"></div>
           <div :style="tipsStyle">
             <ul>
               <li :style="tipStyle" v-for="(tip,itip) in obj.tips" v-bind:key="itip">
@@ -46,16 +46,43 @@ return{
     }
   },
   methods: {
-    getNodeStyle: function (obj) {
+    getNodeStyle: function (obj,inode) {
       let wid = obj.lines.length
-      wid = 1/wid*100
-      wid = wid +"%"
+      if (wid<=2) {
+        wid = 1/wid
+      } else if(inode==0||inode==wid-1){
+        wid = 1/(wid+1)
+      } else {
+        wid = 1/(wid-1)
+      }
       return {
-        width: wid,
+        width: wid*100 +"%",
         textAlign: "center",
         fontSize: this.fontSize+"px",
       }
-    }
+    },
+    getHrStyle: function(obj) {
+      debugger
+      let wid = document.body.offsetWidth;
+      wid = wid -this.pleft - this.pright;
+      wid = wid +"px";
+      let r = this.fontSize*2 +this.circle/2+this.line/2;
+      r = "-" + r +"px"
+      
+      if (obj.lines==undefined) {
+        return {visibility: "visible",marginTop: r,}
+      } else if (obj.lines.length==0){
+        return {visibility: "visible",marginTop: r,}
+      }
+      return {
+        width: wid,
+        height: this.line+"px",
+        marginTop: r,
+        marginLeft: "auto",
+        zIndex:"1",
+        backgroundColor: "#2E6BB1",
+      }
+    },
   },
   computed: {
     innerSplitStyle: function () {
@@ -103,21 +130,6 @@ return{
       return {
         paddingTop: this.fontSize+"px",
         color: "#9D9D9D",
-      }
-    },
-    hrStyle: function() {
-      let wid = document.body.offsetWidth;
-      wid = wid -this.pleft - this.pright;
-      wid = wid +"px";
-      let r = this.fontSize*2 +this.circle/2+this.line/2;
-      r = "-" + r +"px"
-      return {
-        width: wid,
-        height: this.line+"px",
-        marginTop: r,
-        marginLeft: "auto",
-        zIndex:"1",
-        backgroundColor: "#2E6BB1",
       }
     },
     circleStyle: function() {

@@ -52,7 +52,6 @@ return{
     getRow1Style: function (obj) {
       let a = myType=="12"?"qrnhsy":"navzzl";
       var color = this.getFieldColor(obj,a,1)
-      console.log(obj)
       return {
         lineHeight: "20px",
         color: color,
