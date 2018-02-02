@@ -10,5 +10,9 @@
     {
         "tplid": "mob-card-lsinfo",
         "file": "mob-card-lsinfo.vue"
+    },
+    {
+        "tplid": "mob-card-rules",
+        "file": "mob-card-rules.vue"
     }
 ]
