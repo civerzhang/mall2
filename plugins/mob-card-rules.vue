@@ -42,6 +42,7 @@ return{
       //绘图部分样式
       fontSize: 12,   //绘图文字大小
       circle: 8,      //圆直径
+      circleBorder: 2,      //圆点边框
       line: 2         //横线高度
     }
   },
@@ -66,13 +67,13 @@ return{
       let wid = document.body.offsetWidth;
       wid = wid -this.pleft - this.pright;
       wid = wid +"px";
-      let r = this.fontSize*2 +this.circle/2+this.line/2;
+      let r = this.fontSize*2 +this.circle/2+this.circleBorder+this.line/2;   //最后加上圆点边框高度
       r = "-" + r +"px"
-      
+      debugger
       if (obj.lines==undefined) {
-        return {visibility: "visible",marginTop: r,}
+        return {marginTop: r,}
       } else if (obj.lines.length==0){
-        return {visibility: "visible",marginTop: r,}
+        return {marginTop: r,}
       }
       return {
         width: wid,
@@ -136,10 +137,11 @@ return{
       return {
         width: this.circle+"px",
         height: this.circle+"px",
-        borderRadius: this.circle/2+"px",
         marginLeft: "auto",
         marginRight: "auto",
-        backgroundColor: "#2E6BB1",
+        borderRadius: this.circle/2+this.circleBorder+"px",
+        border: "2px solid #306CFF",
+        backgroundColor: "#FFFFFF",
       }
     },
     tipsStyle: function() {
