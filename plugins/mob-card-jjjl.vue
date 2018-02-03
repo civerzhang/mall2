@@ -28,7 +28,12 @@ return {
   methods: {
     jumpJlxq: function(event) {
       let myUrlParam = this.item.urlParam.queryParams,
-          urlStr = "?";
+          urlStr = "?",
+          sys = tdxCheckMobSys(),
+          urlType = {
+            "Android": "JyURL",
+            "IOS": "LocalURL"
+          };
       for (let i = 0; i < myUrlParam.length; i++) {
         urlStr += myUrlParam[i].key+"="+this.data[myUrlParam[i].value];
         urlStr += "&";
@@ -38,7 +43,7 @@ return {
         "OpenName": this.item.urlParam.OpenName,
         "OpenType": "native",
         "OpenUrl": this.item.urlParam.OpenUrl+""+urlStr,
-        "OpenParam": {"UrlType":"Relative","WebViewType":"JyURL"}
+        "OpenParam": {"UrlType":"Relative","WebViewType":urlType[sys]}
       }, function() {})
     },
     

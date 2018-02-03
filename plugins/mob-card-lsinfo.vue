@@ -41,12 +41,17 @@ return{
   methods: {
     jumpLsMore: function(event) {
       // let urlStr = myType=="12"?"lsinfo.html"+location.search:"lsinfogp.html"+location.search;
-      let urlStr ="lsinfo.html"+location.search;
+      let urlStr ="lsinfo.html"+location.search,
+          sys = tdxCheckMobSys(),
+          urlType = {
+            "Android": "JyURL",
+            "IOS": "LocalURL"
+          };
       __webCallTql.send("tdxOpenUrl", {
         "OpenName": "历史收益",
         "OpenType": "native",
         "OpenUrl": urlStr,
-        "OpenParam": {"UrlType":"Relative","WebViewType":"JyURL"}
+        "OpenParam": {"UrlType":"Relative","WebViewType":urlType[sys]}
       }, function() {})
     },
     getRow1Style: function (obj) {
