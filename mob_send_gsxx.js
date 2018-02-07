@@ -8,7 +8,7 @@ var GetSendData = function(n, json) {
     case 0:
       funcid = "HQ.CWServ.tdxzx_jyfunc",
       ix.Set("callno", "107");
-      ix.Set("pro_code", "519997"||json["pro_code"]);
+      ix.Set("pro_code", json["pro_code"]);
       break;
   }
 

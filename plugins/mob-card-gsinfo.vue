@@ -28,7 +28,7 @@ return {
       if (this.data.cutted=="暂无简介信息") {
         return;
       }
-      if (this.data.cutted.length == 93) {
+      if (this.data.cutted.length <= 93) {
         this.$set(this.data, "cutted", this.data[this.item.field]);
         $("img").css("transform", "rotateX(180deg)");
       }else{
