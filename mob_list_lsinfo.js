@@ -15,13 +15,13 @@ var getCols = function() {
   if(myType == "12") {
     cols = [
       {title: "日期",field: "date",align: "left"},
-      {title: "七日年化",field: "qrnhsy",format: "2%"},
+      {title: "七日年化",field: "qrnhsy",format: "4%"},
       {title: "万份收益",field: "wfsy",align: "right"},
     ];
   }else {
     cols = [
       {title: "日期",field: "date",align: "left"},
-      {title: "日涨跌幅",field: "navzzl",format: "2%"},
+      {title: "日涨跌幅",field: "navzzl",format: "4%"},
       {title: "单位净值",field: "nav",align: "right"},
     ]
   }
