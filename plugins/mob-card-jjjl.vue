@@ -9,7 +9,7 @@
       <div :style="row1Style">{{item.cols[1][1].field?data[item.cols[1][1].field]:item.cols[1][1].text}}</div>
     </div>
     <div :style="colImgStyle">
-      <img  :style="imgStyle" src="./res/arrow.png"></img>
+      <img  :style="imgStyle" src="./res/arrow.png"/>
     </div>
 
     <mob-split v-if="item.split" :item="item.split" />

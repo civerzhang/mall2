@@ -1,53 +1,9 @@
 var mob_list_hqlc = {
   items: [
     {
-      tplid: "mob-card-jj",
+      tplid: "mob-card-hqlc",
       index: 0,
       split: {},
-      typeField: "pro_type2",
-      cardItems: [
-        {
-          typeValue: ["12"],
-          title: {
-            field: "pro_name",
-            style: {}
-          },
-          code: {
-            field: "pro_code",
-            style: {}
-          },
-          sy: {
-            field: "qrnhsy",
-            title: "七日年化收益",
-            format: "2%"
-          },
-          cols: [
-            { field: "qgje", title: "起购金额", format: ".0f", suffix: "元" },
-            { field: "wfsy", title: "万份收益", format: ".4f" },
-            { field: "risk_level_name", title: "风险等级" },
-          ]
-        },
-        {
-          title: {
-            field: "pro_name",
-            style: {}
-          },
-          code: {
-            field: "pro_code",
-            style: {}
-          },
-          sy: {
-            field: "nav",
-            title: "最新净值",
-            format: ".4f"
-          },
-          cols: [
-            { field: "yzf", title: "近一月涨跌", format: "2%" },
-            { field: "jnzf", title: "今年以来涨幅", format: "2%" },
-            { field: "nav-total", title: "累积净值", format: ".4f" }
-          ]
-        },
-      ],
     },
     {
       tplid: "mob-chart",

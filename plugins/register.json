@@ -14,5 +14,9 @@
     {
         "tplid": "mob-card-rules",
         "file": "mob-card-rules.vue"
+    },
+    {
+        "tplid": "mob-card-hqlc",
+        "file": "mob-card-hqlc.vue"
     }
 ]
