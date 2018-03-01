@@ -18,5 +18,9 @@
     {
         "tplid": "mob-card-hqlc",
         "file": "mob-card-hqlc.vue"
+    },
+    {
+        "tplid": "mob-chart-tab",
+        "file": "mob-chart-tab.vue"
     }
 ]

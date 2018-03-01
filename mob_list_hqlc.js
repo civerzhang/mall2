@@ -6,25 +6,19 @@ var mob_list_hqlc = {
       split: {},
     },
     {
-      tplid: "mob-chart",
-      index: 3,
+      tplid: "mob-chart-tab",
+      // index: 3,  //使用tab模板绘图不走该case，请求在组件内处理
       split: {},
-      chart: {
-        title: function(data) {
-          return data[0]["nav"] ? "单位净值" : "万份收益";
-        },
-        xAxis: "date",
-        yAxis: function(data) {
-          return data[0]["nav"] ? "nav" : "wfsy";
-        }
-      },
-      chartBar: [
+      tabBar:[
+        { title: "七日年化收益", value: "qrnhsy" },
+        { title: "万份收益", value: "wfsy" },
+      ],
+      periodBar: [
         { title: "一月", value: "-1" },
         { title: "一季", value: "-3" },
         { title: "半年", value: "-6" },
         { title: "一年", value: "-12" },
-      ],
-      chartBarSel: 0
+      ]
     },
     {
       tplid: "mob-card-lsinfo",

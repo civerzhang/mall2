@@ -29,6 +29,7 @@ var GetSendData = function(n, json) {
       ix.Set("pro_type", "zms");
       break;
     case 3:
+    // 使用tab模板绘图不走该case，请求在组件内处理
       funcid = "HQ.CWServ.tdxzx_jyfunc";
       ix.Set("callno", "103");
       ix.Set("pro_code", code);
@@ -130,7 +131,6 @@ var getMoreInfo = function(row, vm) {
 
     if (typeof data == 'string') {
       data = data.replace(/\r\n/ig, "<br>");
-      // data = data.replace(/\s/g, "");
       // 转换类型防止空格被格式化
       data = JSON.parse(data);
     }

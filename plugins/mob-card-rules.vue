@@ -63,13 +63,13 @@ return{
       }
     },
     getHrStyle: function(obj) {
-      debugger
+      // debugger
       let wid = document.body.offsetWidth;
       wid = wid -this.pleft - this.pright;
       wid = wid +"px";
       let r = this.fontSize*2 +this.circle/2+this.circleBorder+this.line/2;   //最后加上圆点边框高度
       r = "-" + r +"px"
-      debugger
+      // debugger
       if (obj.lines==undefined) {
         return {marginTop: r,}
       } else if (obj.lines.length==0){
