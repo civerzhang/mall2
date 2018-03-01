@@ -14,13 +14,10 @@
           </div>
           <div :style="getHrStyle(obj)"></div>
           <div :style="tipsStyle">
-            <ul>
-              <li :style="tipStyle" v-for="(tip,itip) in obj.tips" v-bind:key="itip">
-                <!-- <div><div :style="dianStyle"></div></div> -->
-                <div><img :style="imgStyle" src="./res/Rectangle19.png"></div>
-                <div>{{tip}}</div>
-              </li>
-            </ul>
+            <div :style="tipStyle" v-for="(tip,itip) in obj.tips" v-bind:key="itip">
+              <div><img :style="imgStyle" src="./res/Rectangle19.png"></div>
+              <div :style="tipTextStyle">{{tip}}</div>
+            </div>
           </div>
         </div>
     </div>
@@ -35,10 +32,10 @@
 return{
   data: function() {
     return {
-      ptop: 10,       //组件内部上边距
+      ptop: 14,       //组件内部上边距
       pbottom: 0,     //组件内部下边距
-      pleft: 15,      //组件内部左边距
-      pright: 15,     //组件内部右边距
+      pleft: 17,      //组件内部左边距
+      pright: 17,     //组件内部右边距
       //绘图部分样式
       fontSize: 12,   //绘图文字大小
       circle: 8,      //圆直径
@@ -81,14 +78,14 @@ return{
         marginTop: r,
         marginLeft: "auto",
         zIndex:"1",
-        backgroundColor: "#2E6BB1",
+        backgroundColor: "#306CFF",
       }
     },
   },
   computed: {
     innerSplitStyle: function () {
       return {
-        backgroundColor:"#EEEEEE",
+        backgroundColor:"#D6D6D6",
         marginTop: "10px",
         marginBottom: "10px",
         height: "1px",
@@ -113,7 +110,7 @@ return{
         lineHeight: "20px",
         color: "#404040",
         fontSize: "14px",
-        margin: "0 0 10px 0"
+        margin: "15px 0 19px 0"
       }
     },
     nodeBoxStyle: function() {
@@ -156,17 +153,13 @@ return{
       return {
         display: "flex",
         marginBottom: "10px",
+      }
+    },
+    tipTextStyle: function() {
+      return {
         lineHeight: "17px",
         color: "#9D9D9D",
         fontSize: "12px",
-      }
-    },
-    dianStyle: function() {
-      return {
-        width: "4px",
-        height: "4px",
-        margin: "3px 3px 0 0",
-        backgroundColor: "#9D9D9D",
       }
     },
     imgStyle: function() {

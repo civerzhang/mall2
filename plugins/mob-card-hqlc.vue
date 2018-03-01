@@ -50,14 +50,13 @@ return{
     nodeBoxStyle: function() {
       return {
         display: "flex",
-        height: "126px",
-        padding: "10px 0"
+        // height: "126px",
       }
     },
     nodeStyle: function() {
       return {
         width: "50%",
-        padding: "20px 20px"
+        padding: "22px 20px 18px 20px"
       }
     },
     subNodeStyle1: function() {
